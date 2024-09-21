@@ -1,7 +1,6 @@
 # Se importan los módulos necesarios para cargar el contenido de las APIs y mostrar la fecha
 import json
 import requests
-from datetime import datetime
 
 # Se hace la petición a la API de bromas, se imprime el JSON y se entrega el contenido
 def broma(urls: list):
