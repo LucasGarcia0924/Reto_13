@@ -2,21 +2,21 @@
 import json
 import requests
 
-# Se hace la petición a la API de bromas, se imprime el JSON y se entrega el contenido
+# Se hace la petición a la API de bromas, se imprime su url y la respuesta que entrega, luego entrega el contenido
 def broma(urls: list):
     print(f"\n{urls[0]}\n")
     peticion = requests.get(urls[0])
     print(f"{peticion}\n")
     return json.loads(peticion.content)
 
-# Se hace la petición a la API de perros, se imprime el JSON y se entrega el contenido
+# Se hace la petición a la API de perros, se imprime su url y la respuesta que entrega, luego entrega el contenido
 def perros(urls: list):
     print(f"\n{urls[1]}\n")
     peticion = requests.get(urls[1])
     print(f"{peticion}\n")
     return json.loads(peticion.content)
 
-# Se hace la petición a la API de gatos, se imprime el JSON y se entrega el contenido
+# Se hace la petición a la API de gatos, se imprime su url y la respuesta que entrega, luego entrega el contenido
 def gatos(urls: list):
     print(f"\n{urls[2]}\n")
     peticion = requests.get(urls[2])
@@ -25,19 +25,19 @@ def gatos(urls: list):
 
 def ImprimirAPIs(urls): # Función madre para llamar a las demás e imprimir resultados
     
-    # Obtiene el contenido del JSON de bromas e imprime el conjunto de llaves y valores
+    # Obtiene el contenido del JSON de bromas y se imprime junto al conjunto de llaves y valores
     bromita : str = broma(urls)
     print(bromita)
     for k,v in bromita.items():
         print(k, "->", v)
     
-    # Obtiene el contenido del JSON de fotos de perros e imprime el conjunto de llaves y valores
+    # Obtiene el contenido del JSON de fotos de perros y se imprime junto al conjunto de llaves y valores
     fotoPerro : str = perros(urls)
     print(fotoPerro)
     for k,v in fotoPerro.items(): 
         print(k, "->", v)
 
-    # Obtiene el contenido del JSON de datos de gatos e imprime el conjunto de llaves y valores
+    # Obtiene el contenido del JSON de datos de gatos y se imprime junto al conjunto de llaves y valores
     datosGatos : str = gatos(urls)
     print(datosGatos)
     for k,v in datosGatos.items(): 
